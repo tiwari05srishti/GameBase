@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <head>
+    <title>SignUp-Gamebase</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="img/favicon.png" rel="shortcut icon">
+  </head>
+  <body>
+    <h1 align="center">SignUp to FunCrown<h1>
+    <img style="padding:20px" src="img/signup.png" alt="signup" class="center-image">
+    <form id="signup-form" class="center-form">
+    <h3 style="color:#000;">Sign Up</h3>
+    <input type="email" id="signup-email"  placeholder="example@example.com" required autocomplete="off"><br>
+    <input type="password" id="signup-password" placeholder="Password" required><br>
+    <input class="submit-button" type="submit" value="Sign Up">
+    <input class="submit-button" type="reset">
+    </form>
+    
+    <p align="center">Existing user → <button id="button1" align="center" onclick="window.location.href='login.html'">LogIn</button></p>
+    <div id="home-button">
+      <a href="homepage.html"><img src="img/home.png"  width="25px" height="25px"> </a><br>
+      <h6>Home</h6>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+        var firebaseConfig = {
+        apiKey: "AIzaSyCAvtKJ_O2rLJgxmvemNJ0acD5Xej4i-ww",
+        authDomain: "gamebase-c0c65.firebaseapp.com",
+        projectId: "gamebase-c0c65",
+        storageBucket: "gamebase-c0c65.appspot.com",
+        messagingSenderId: "1033954537145",
+        appId: "1:1033954537145:web:22c60966029f61d3e8f568",
+        measurementId: "G-BTSP91LNX3"
+        };
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+
+    db.settings({ timestampsInSnapshots: true}); 
+    </script>
+    <script src="signup.js"></script>
+  </body>
+  <footer><img src="img/website-logo.png" width="125px" height="40px"></footer>
+</html>

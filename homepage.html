@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+   <title>FunCrown</title>
+   <link rel="stylesheet" href="homepage.css">
+   <link href="img/favicon.png" rel="shortcut icon">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<body>
+<div class="navbar">
+    <a id="cred">FunCrown</a>
+    <a href="homepage.html"><img src="img/home.png"  width="20px" height="18px"> </a>
+    <a  href="contact.html" target="_self">Contact</a>
+    <a style="display:none;" id="login-nav" href="login.html" target="_self">Login</a>
+    <a style="display:none;" id="signup-nav" href="signup.html" target="_self">SignUp</a>
+    <a style="display:none;" href="index.html" id="logout">Logout</a>
+    <a style="display:none;" href="AddGame/index.html" id="add-game">Add Game</a>
+    <div class="search-container">
+     <form>
+       <input type="reset" value="Clear" onclick="document.location.reload();">
+       <input id="searchbar" type="text" placeholder="Search" name="search" autocomplete="off" onkeyup="search_fun()">
+     </form>
+    </div>
+    
+</div>
+<div class="main">
+  <h1 style="margin-bottom:0px;">Welcome to FunCrown</h1>
+  <h4 style="margin:0px;">The ultimate Gaming Zone</h4><br>
+  <h1 style="margin-top:0px;">Have fun</h1><br>
+  <p id="locate"></p>
+  <img src="game/g1.jfif" style="display=inline;border:5px dotted white;">
+  <img src="game/g3.jfif" style="display=inline;border:5px dotted white;">
+  <img src="game/g4.jfif" style="display=inline;border:5px dotted white;">
+  <img src="game/g5.jfif" style="display=inline;border:5px dotted white;">
+</div> 
+<hr>
+<p id="search-box">Search Suggestions ↴</p>  
+<p id="search-result"></p>
+<div class="main">
+  <img src="game/g6.jfif" style="display=inline;border:5px dotted white;">
+  <img src="game/g7.jfif" style="display=inline;border:5px dotted white;">
+  <img src="game/g8.jfif" style="display=inline;border:5px dotted white;">
+  <img src="game/g9.jfif" style="display=inline;border:5px dotted white;">
+</div>
+<hr>
+<p id="new-addition">Games recently added by admin ↴</p>
+<div align="center" style="margin-top: 20px;margin-bottom: 20px;"><ul id="myUL" style="list-style-type:none;margin:0;padding:0;"></ul></div>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCAvtKJ_O2rLJgxmvemNJ0acD5Xej4i-ww",
+        authDomain: "gamebase-c0c65.firebaseapp.com",
+        projectId: "gamebase-c0c65",
+        storageBucket: "gamebase-c0c65.appspot.com",
+        messagingSenderId: "1033954537145",
+        appId: "1:1033954537145:web:22c60966029f61d3e8f568",
+        measurementId: "G-BTSP91LNX3"
+    };
+    
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    db.settings({TimestampsInSnapshots: true});
+  
+    </script>
+    <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="homepage.js"></script>
+   <script src="login.js"></script>
+   <script src="logout.js"></script>
+  </body>
+  <footer><img src="img/website-logo.png" width="125px" height="40px"></footer>
+</html>

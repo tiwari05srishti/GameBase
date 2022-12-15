@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+       
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    </head>
+    <body style="background-image: url(../img/bg-2.gif);background-repeat:no-repeat;background-size: 100%;">
+    <div align="center" id="home-button" style="margin-top:40px;margin-bottom:0px;">
+      <a href="../homepage.html"><img src="../img/home.png"  width="40px" height="40px"> </a><br>
+      <h4 style="margin-top:0px;">Home</h4>
+    </div>
+    <h1>Portal for adding new games.</h1>
+    <div class="content">
+        <form id="add-cafe-form">
+            <input type="text" name="games" placeholder="Game Name" autocomplete="off">
+            <input type="text" name="links" placeholder="Game Links" autocomplete="off">
+            <button>Add Game</button>
+        </form>
+        <hr>
+        <ul id="cafe-list"></ul>
+    </div>
+
+    
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCAvtKJ_O2rLJgxmvemNJ0acD5Xej4i-ww",
+        authDomain: "gamebase-c0c65.firebaseapp.com",
+        projectId: "gamebase-c0c65",
+        storageBucket: "gamebase-c0c65.appspot.com",
+        messagingSenderId: "1033954537145",
+        appId: "1:1033954537145:web:22c60966029f61d3e8f568",
+        measurementId: "G-BTSP91LNX3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+    db.settings({ timestampsInSnapshots: true}); //
+    </script>
+    <script src="script.js"></script>
+    <script src=../login.js></script>
+    </body>
+</html>
+
